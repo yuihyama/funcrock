@@ -16,6 +16,7 @@ class AddTest < Minitest::Test
     assert add(-1, -2)
 
     assert_output("0.0\n") {puts add(0.0, 0.0)}
+    assert_output("0.0\n") {puts add(-0.0, 0.0)}
     assert_output("3\n") {puts add(1, 2)}
     assert_output("-3\n") {puts add(-1, -2)}
   end
