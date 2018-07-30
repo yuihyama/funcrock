@@ -7,7 +7,7 @@ class AddTest < Minitest::Test
   def test_add
     assert add(1, 2)
     assert add(-1, -2)
-    
+
     assert_equal 0, add(0, 0)
     assert_equal 0, add(-0, -0)
     assert_equal 0, add(-0, 0.0)
