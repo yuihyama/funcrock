@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-def mean(n_arry)
-  n_arry.sum(0.0) / n_arry.length
+def mean(n_ary)
+  n_ary.sum(0.0) / n_ary.length
 end
