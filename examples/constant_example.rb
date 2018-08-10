@@ -8,8 +8,8 @@ puts constant(1) # => 1
 
 puts constant(2.2) # => 2.2
 
-n_arry = [0, 1, 2.2, 3.3, 100]
-n_arry.each { |n| puts constant(n) }
+n_ary = [0, 1, 2.2, 3.3, 100]
+n_ary.each { |n| puts constant(n) }
 # =>
 # 0
 # 1
