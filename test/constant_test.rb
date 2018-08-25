@@ -7,8 +7,8 @@ class ConstantTest < Minitest::Test
   def test_constant
     assert_equal 0, constant(0)
     assert_equal 0.0, constant(0)
-    assert_equal -0, constant(-0)
-    assert_equal -0.0, constant(-0.0)
+    assert_equal(-0, constant(-0))
+    assert_equal(-0.0, constant(-0.0))
     assert_equal 1, constant(1)
 
     assert_output("0\n") { puts constant(0) }

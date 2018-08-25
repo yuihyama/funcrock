@@ -19,12 +19,12 @@ class MulTest < Minitest::Test
     assert_equal 4, mul(2, 2)
     assert_equal 2.4200000000000004, mul(1.1, 2.2)
     assert_equal 2, mul(-1, -2)
-    assert_equal -2, mul(-1, 2)
-    assert_equal -2, mul(1, -2)
+    assert_equal(-2, mul(-1, 2))
+    assert_equal(-2, mul(1, -2))
     assert_equal 2, mul(1.0, 2.0)
     assert_equal 2.4200000000000004, mul(-1.1, -2.2)
-    assert_equal -2.4200000000000004, mul(-1.1, 2.2)
-    assert_equal -2.4200000000000004, mul(1.1, -2.2)
+    assert_equal(-2.4200000000000004, mul(-1.1, 2.2))
+    assert_equal(-2.4200000000000004, mul(1.1, -2.2))
 
     assert_output("0\n") { puts mul(0, 0)}
     assert_output("2\n") { puts mul(1, 2)}

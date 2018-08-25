@@ -13,10 +13,10 @@ class ModTest < Minitest::Test
     assert_equal 0, mod(2, 1)
     assert_equal 1.5, mod(3.5, 2)
     assert_equal 1, mod(-1.0, 2)
-    assert_equal -1, mod(1, -2.0)
-    assert_equal -1, mod(-1.0, -2.0)
+    assert_equal(-1, mod(1, -2.0))
+    assert_equal(-1, mod(-1.0, -2.0))
     assert_equal 1, mod(-1.0, 2.0)
-    assert_equal -1, mod(1.0, -2.0)
+    assert_equal(-1, mod(1.0, -2.0))
 
     assert_output("1\n") { puts mod(1, 2) }
     assert_output("0\n") { puts mod(2, 1) }
