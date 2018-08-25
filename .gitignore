@@ -50,5 +50,6 @@ build-iPhoneSimulator/
 .rvmrc
 
 
-# My file
+## My files
+.DS_Store
 main.rb
