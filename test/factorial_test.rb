@@ -6,6 +6,7 @@ require './lib/factorial'
 class FactorialTest < Minitest::Test
   def test_factorial
     assert factorial(10)
+    assert factorial(10.0)
 
     assert_equal 0, factorial(-1)
     assert_equal 1, factorial(0)
@@ -18,8 +19,10 @@ class FactorialTest < Minitest::Test
     assert_equal 5040, factorial(7)
     assert_equal 40320, factorial(8)
     assert_equal 362880, factorial(9)
+    assert_equal 3628800, factorial(10.0)
 
     assert_output("24\n") { p factorial(4) }
     assert_output("362880\n") { puts factorial(9) }
+    assert_output("3628800\n") { puts factorial(10.0) }
   end
 end
