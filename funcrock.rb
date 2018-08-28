@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Funmathruby examples:
+# funcrock examples:
 
 require './lib/add'
 require './lib/sub'
