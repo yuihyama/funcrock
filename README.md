@@ -1,1 +1,1 @@
-# funmathruby
+# mathfunruby
