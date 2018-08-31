@@ -39,6 +39,7 @@ class AllTest < Minitest::Test
     assert_equal 8, add(square(2), square(2))
     assert_equal 19, sub(cube(3), cube(2))
     assert_equal 2, constant(1) + constant(1)
+    assert_equal 0, mean([1, 2, 3]) - mean([1, 2, 3])
 
     # assert_output: p:
     assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
@@ -53,6 +54,7 @@ class AllTest < Minitest::Test
     assert_output("8\n") { p add(square(2), square(2)) }
     assert_output("19\n") { p sub(cube(3), cube(2)) }
     assert_output("2\n") { p constant(1) + constant(1) }
+    assert_output("0.0\n") { p mean([1, 2, 3]) - mean([1, 2, 3]) }
 
     # assert_output: puts:
     assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
@@ -66,6 +68,7 @@ class AllTest < Minitest::Test
     assert_output("8\n") { puts add(square(2), square(2)) }
     assert_output("19\n") { puts sub(cube(3), cube(2)) }
     assert_output("2\n") { puts constant(1) + constant(1) }
+    assert_output("0.0\n") { puts mean([1, 2, 3]) - mean([1, 2, 3]) }
 
     # assert_output: print:
     assert_output("9\n") { print \
