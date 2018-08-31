@@ -29,5 +29,7 @@ class AllTest < Minitest::Test
   def test_all
     assert_equal 10, add(add(add(1, 2), 3), 4)
     assert_equal 9, sub(add(add(add(1, 2), 3), 4), 1)
+
+    assert_output("10\n") { puts add(add(add(1, 2), 3), 4)}
   end
 end
