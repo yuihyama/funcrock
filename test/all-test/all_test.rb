@@ -65,5 +65,16 @@ class AllTest < Minitest::Test
     assert_output("9\n") { print \
       div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2), "\n" }
     assert_output("8\n") { print add(square(2), square(2)), "\n" }
+
+    # assert_output: printf: add()
+    assert_output("10\n") { printf "%d\n", add(add(add(1, 2), 3), 4) }
+
+    # assert_output: sprinf: add()
+    assert_output("\"10\"\n") { p sprintf "%d", add(add(add(1, 2), 3), 4) }
+    assert_output("\"10\"\n") { p sprintf("%d", add(add(add(1, 2), 3), 4)) }
+    assert_output("\"10\"\n") { p sprintf "%d" % add(add(add(1, 2), 3), 4) }
+    assert_output("\"10\"\n") { p sprintf "%s", add(add(add(1, 2), 3), 4) }
+    assert_output("\"10\"\n") { p sprintf("%s", add(add(add(1, 2), 3), 4)) }
+    assert_output("\"10\"\n") { p sprintf "%s" % add(add(add(1, 2), 3), 4) }
   end
 end
