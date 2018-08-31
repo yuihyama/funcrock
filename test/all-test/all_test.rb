@@ -46,13 +46,14 @@ class AllTest < Minitest::Test
     assert_equal 3.0, mean([gcd(4, 24), gcd(2, 24)])
     assert_equal true, le(constant(1), constant(1.0))
     assert_equal false, lt(constant(1), constant(1.0))
+    assert_equal [2, 4, 6, 8, 10, 12, 14, 16, 18], mulseq(add(1, 0), add(1, 8), 2)
 
     # assert_output: p:
     assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
     assert_output("9\n") { p sub(add(add(add(1, 2), 3), 4), 1) }
     assert_output("18\n") { p mul(sub(add(add(add(1, 2), 3), 4), 1), 2) }
-    assert_output("9\n") { p \
-      div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2) }
+    assert_output("9\n") {
+      p div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2) }
     #
     res1 = div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
     assert_output("9\n") { p res1 }
@@ -66,6 +67,10 @@ class AllTest < Minitest::Test
     assert_output("3.0\n") { p mean([gcd(4, 24), gcd(2, 24)]) }
     assert_output("true\n") { p le(constant(1), constant(1.0)) }
     assert_output("false\n") { p lt(constant(1), constant(1.0)) }
+    assert_output("[2, 4, 6, 8, 10, 12, 14, 16, 18]\n") {
+      p mulseq(add(1, 0), add(1, 8), 2) }
+    mulseq1 = mulseq(add(1, 0), add(1, 8), 2)
+    assert_output("[2, 4, 6, 8, 10, 12, 14, 16, 18]\n") { p mulseq1 }
 
     # assert_output: puts:
     assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
@@ -85,6 +90,10 @@ class AllTest < Minitest::Test
     assert_output("3.0\n") { puts mean([gcd(4, 24), gcd(2, 24)]) }
     assert_output("true\n") { puts le(constant(1), constant(1.0)) }
     assert_output("false\n") { puts lt(constant(1), constant(1.0)) }
+    assert_output("2\n4\n6\n8\n10\n12\n14\n16\n18\n") {
+      puts mulseq(add(1, 0), add(1, 8), 2) }
+    assert_output("2\n4\n6\n8\n10\n12\n14\n16\n18\n") {
+      puts mulseq1 }
 
     # assert_output: print:
     assert_output("9\n") { print \
