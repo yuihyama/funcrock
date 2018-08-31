@@ -78,7 +78,7 @@ class AllTest < Minitest::Test
     assert_output("0.0\n") { puts mean([1, 2, 3]) - mean([1, 2, 3]) }
     assert_output("64\n") { puts mul(pow(2, 3), pow(2, 3)) }
     assert_output("60\n") { puts div(factorial(5), 2) }
-    assert_output("3.0\n") { puts mean([gcd(4, 24), gcd(2, 24)])}
+    assert_output("3.0\n") { puts mean([gcd(4, 24), gcd(2, 24)]) }
 
     # assert_output: print:
     assert_output("9\n") { print \
