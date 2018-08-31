@@ -38,18 +38,6 @@ class AllTest < Minitest::Test
     #
     assert_equal 8, add(square(2), square(2))
 
-    # assert_output: puts:
-    assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
-    assert_output("9\n") { puts sub(add(add(add(1, 2), 3), 4), 1) }
-    assert_output("18\n") { puts mul(sub(add(add(add(1, 2), 3), 4), 1), 2) }
-    assert_output("9\n") { puts div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2) }
-    #
-    res1 = div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
-    assert_output("9\n") { puts res1 }
-    #
-    assert_output("8\n") { puts add(square(2), square(2)) }
-    #
-    #
     # assert_output: p:
     assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
     assert_output("9\n") { p sub(add(add(add(1, 2), 3), 4), 1) }
@@ -61,8 +49,18 @@ class AllTest < Minitest::Test
     assert_output("9\n") { p res1 }
     #
     assert_output("8\n") { p add(square(2), square(2)) }
+
+    # assert_output: puts:
+    assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
+    assert_output("9\n") { puts sub(add(add(add(1, 2), 3), 4), 1) }
+    assert_output("18\n") { puts mul(sub(add(add(add(1, 2), 3), 4), 1), 2) }
+    assert_output("9\n") { puts div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2) }
     #
+    res1 = div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
+    assert_output("9\n") { puts res1 }
     #
+    assert_output("8\n") { puts add(square(2), square(2)) }
+
     # assert_output: print:
     assert_output("9\n") { print \
       div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2), "\n" }
