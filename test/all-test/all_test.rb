@@ -48,6 +48,7 @@ class AllTest < Minitest::Test
     assert_equal false, lt(constant(1), constant(1.0))
     assert_equal [2, 4, 6, 8, 10, 12, 14, 16, 18], mulseq(add(1, 0), add(1, 8), 2)
     assert_equal 2, factorial(nextnum(1))
+    assert_equal 56, nextnum(spadd(1, 10))
 
     # assert_output: p:
     assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
@@ -73,6 +74,7 @@ class AllTest < Minitest::Test
     mulseq1 = mulseq(add(1, 0), add(1, 8), 2)
     assert_output("[2, 4, 6, 8, 10, 12, 14, 16, 18]\n") { p mulseq1 }
     assert_output("2\n") { p factorial(nextnum(1)) }
+    assert_output("56\n") { p nextnum(spadd(1, 10)) }
 
     # assert_output: puts:
     assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
@@ -97,6 +99,7 @@ class AllTest < Minitest::Test
     assert_output("2\n4\n6\n8\n10\n12\n14\n16\n18\n") {
       puts mulseq1 }
     assert_output("2\n") { puts factorial(nextnum(1)) }
+    assert_output("56\n") { puts nextnum(spadd(1, 10)) }
 
     # assert_output: print:
     assert_output("9\n") { print \
