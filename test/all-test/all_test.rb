@@ -41,6 +41,9 @@ class AllTest < Minitest::Test
     assert_equal 64, mul(pow(2, 3), pow(2, 3))
     assert_equal 2, constant(1) + constant(1)
     assert_equal 0, mean([1, 2, 3]) - mean([1, 2, 3])
+    assert_equal 60, div(factorial(5), 2)
+    assert_equal 3, mean([gcd(4, 24), gcd(2, 24)])
+    assert_equal 3.0, mean([gcd(4, 24), gcd(2, 24)])
 
     # assert_output: p:
     assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
@@ -57,6 +60,8 @@ class AllTest < Minitest::Test
     assert_output("2\n") { p constant(1) + constant(1) }
     assert_output("0.0\n") { p mean([1, 2, 3]) - mean([1, 2, 3]) }
     assert_output("64\n") { p mul(pow(2, 3), pow(2, 3)) }
+    assert_output("60\n") { p div(factorial(5), 2) }
+    assert_output("3.0\n") { p mean([gcd(4, 24), gcd(2, 24)])}
 
     # assert_output: puts:
     assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
@@ -72,6 +77,8 @@ class AllTest < Minitest::Test
     assert_output("2\n") { puts constant(1) + constant(1) }
     assert_output("0.0\n") { puts mean([1, 2, 3]) - mean([1, 2, 3]) }
     assert_output("64\n") { puts mul(pow(2, 3), pow(2, 3)) }
+    assert_output("60\n") { puts div(factorial(5), 2) }
+    assert_output("3.0\n") { puts mean([gcd(4, 24), gcd(2, 24)])}
 
     # assert_output: print:
     assert_output("9\n") { print \
