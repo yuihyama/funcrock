@@ -37,7 +37,7 @@ class AllTest < Minitest::Test
     assert_equal 9, res1
     #
 
-    # assert_output:
+    # assert_output: puts:
     assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
     assert_output("9\n") { puts sub(add(add(add(1, 2), 3), 4), 1) }
     assert_output("18\n") { puts mul(sub(add(add(add(1, 2), 3), 4), 1), 2) }
@@ -46,5 +46,14 @@ class AllTest < Minitest::Test
     res1 = div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
     assert_output("9\n") { puts res1 }
     #
+    #
+    # assert_output: p:
+    assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
+    assert_output("9\n") { p sub(add(add(add(1, 2), 3), 4), 1) }
+    assert_output("18\n") { p mul(sub(add(add(add(1, 2), 3), 4), 1), 2) }
+    assert_output("9\n") { p div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2) }
+    #
+    res1 = div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
+    assert_output("9\n") { p res1 }
   end
 end
