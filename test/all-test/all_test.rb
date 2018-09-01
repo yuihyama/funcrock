@@ -50,6 +50,7 @@ class AllTest < Minitest::Test
     assert_equal [2, 4, 6, 8, 10, 12, 14, 16, 18], mulseq(add(1, 0), add(1, 8), 2)
     assert_equal 2, factorial(nextnum(1))
     assert_equal 56, nextnum(spadd(1, 10))
+    assert_equal 1, nextnum(antenum(1))
 
     # assert_output: p:
     assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
@@ -61,6 +62,7 @@ class AllTest < Minitest::Test
     res1 = div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
     assert_output("9\n") { p res1 }
     #
+    assert_output("1\n") { p add(mod(1, 2), mod(2, 2)) }
     assert_output("8\n") { p add(square(2), square(2)) }
     assert_output("19\n") { p sub(cube(3), cube(2)) }
     assert_output("2\n") { p constant(1) + constant(1) }
@@ -76,7 +78,7 @@ class AllTest < Minitest::Test
     assert_output("[2, 4, 6, 8, 10, 12, 14, 16, 18]\n") { p mulseq1 }
     assert_output("2\n") { p factorial(nextnum(1)) }
     assert_output("56\n") { p nextnum(spadd(1, 10)) }
-    assert_output("1\n") { p add(mod(1, 2), mod(2, 2)) }
+    assert_output("1\n") { p nextnum(antenum(1)) }
 
     # assert_output: puts:
     assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
@@ -87,6 +89,7 @@ class AllTest < Minitest::Test
     res1 = div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
     assert_output("9\n") { puts res1 }
     #
+    assert_output("1\n") { puts add(mod(1, 2), mod(2, 2)) }
     assert_output("8\n") { puts add(square(2), square(2)) }
     assert_output("19\n") { puts sub(cube(3), cube(2)) }
     assert_output("2\n") { puts constant(1) + constant(1) }
@@ -102,7 +105,7 @@ class AllTest < Minitest::Test
       puts mulseq1 }
     assert_output("2\n") { puts factorial(nextnum(1)) }
     assert_output("56\n") { puts nextnum(spadd(1, 10)) }
-    assert_output("1\n") { puts add(mod(1, 2), mod(2, 2)) }
+    assert_output("1\n") { puts nextnum(antenum(1)) }
 
     # assert_output: print:
     assert_output("9\n") {
