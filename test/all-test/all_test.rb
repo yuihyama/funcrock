@@ -51,6 +51,7 @@ class AllTest < Minitest::Test
     assert_equal 2, factorial(nextnum(1))
     assert_equal 56, nextnum(spadd(1, 10))
     assert_equal 1, nextnum(antenum(1))
+    assert_equal 1440, add(perm(10, 3), perm(10, 3))
 
     # assert_output: p:
     assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
@@ -79,6 +80,7 @@ class AllTest < Minitest::Test
     assert_output("2\n") { p factorial(nextnum(1)) }
     assert_output("56\n") { p nextnum(spadd(1, 10)) }
     assert_output("1\n") { p nextnum(antenum(1)) }
+    assert_output("1440\n") { p add(perm(10, 3), perm(10, 3)) }
 
     # assert_output: puts:
     assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
@@ -106,6 +108,7 @@ class AllTest < Minitest::Test
     assert_output("2\n") { puts factorial(nextnum(1)) }
     assert_output("56\n") { puts nextnum(spadd(1, 10)) }
     assert_output("1\n") { puts nextnum(antenum(1)) }
+    assert_output("1440\n") { puts add(perm(10, 3), perm(10, 3)) }
 
     # assert_output: print:
     assert_output("9\n") {
