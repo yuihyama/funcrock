@@ -59,7 +59,8 @@ class AllTest < Minitest::Test
     assert_output("9\n") { p sub(add(add(add(1, 2), 3), 4), 1) }
     assert_output("18\n") { p mul(sub(add(add(add(1, 2), 3), 4), 1), 2) }
     assert_output("9\n") {
-      p div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2) }
+      p div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
+    }
     #
     res1 = div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2)
     assert_output("9\n") { p res1 }
@@ -75,7 +76,8 @@ class AllTest < Minitest::Test
     assert_output("true\n") { p le(constant(1), constant(1.0)) }
     assert_output("false\n") { p lt(constant(1), constant(1.0)) }
     assert_output("[2, 4, 6, 8, 10, 12, 14, 16, 18]\n") {
-      p mulseq(add(1, 0), add(1, 8), 2) }
+      p mulseq(add(1, 0), add(1, 8), 2)
+    }
     mulseq1 = mulseq(add(1, 0), add(1, 8), 2)
     assert_output("[2, 4, 6, 8, 10, 12, 14, 16, 18]\n") { p mulseq1 }
     assert_output("2\n") { p factorial(nextnum(1)) }
