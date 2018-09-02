@@ -26,7 +26,7 @@ end
 # $ ruby all_test.rb
 
 class AllTest < Minitest::Test
-  def test_all
+  def test_all_ae
     # assert_equal:
     assert_equal 10, add(add(add(1, 2), 3), 4)
     assert_equal 9, sub(add(add(add(1, 2), 3), 4), 1)
@@ -56,7 +56,9 @@ class AllTest < Minitest::Test
     assert_equal [8, 9, 10], sort([add(1, 9), add(1, 8), add(1, 7)])
     assert_equal [8, 9, 10], spsort(add(1, 9), add(1, 8), add(1, 7))
     assert_equal [1, 2, 4, 5, 10, 20], divisors(mul(add(1, 9), 2))
+  end
 
+  def test_all_ao_p
     # assert_output: p:
     assert_output("10\n") { p add(add(add(1, 2), 3), 4) }
     assert_output("9\n") { p sub(add(add(add(1, 2), 3), 4), 1) }
@@ -91,7 +93,9 @@ class AllTest < Minitest::Test
     assert_output("[8, 9, 10]\n") { p sort([add(1, 9), add(1, 8), add(1, 7)]) }
     assert_output("[8, 9, 10]\n") { p spsort(add(1, 9), add(1, 8), add(1, 7)) }
     assert_output("[1, 2, 4, 5, 10, 20]\n") { p divisors(mul(add(1, 9), 2)) }
+  end
 
+  def test_all_ao_puts
     # assert_output: puts:
     assert_output("10\n") { puts add(add(add(1, 2), 3), 4) }
     assert_output("9\n") { puts sub(add(add(add(1, 2), 3), 4), 1) }
@@ -114,9 +118,12 @@ class AllTest < Minitest::Test
     assert_output("2\n4\n6\n8\n10\n12\n14\n16\n18\n") {
       puts mulseq(add(1, 0), add(1, 8), 2)
     }
+    #
+    mulseq2 = mulseq(add(1, 0), add(1, 8), 2)
     assert_output("2\n4\n6\n8\n10\n12\n14\n16\n18\n") {
-      puts mulseq1
+      puts mulseq2
     }
+    #
     assert_output("2\n") { puts factorial(nextnum(1)) }
     assert_output("56\n") { puts nextnum(spadd(1, 10)) }
     assert_output("1\n") { puts nextnum(antenum(1)) }
@@ -125,15 +132,21 @@ class AllTest < Minitest::Test
     assert_output("8\n9\n10\n") { puts sort([add(1, 9), add(1, 8), add(1, 7)]) }
     assert_output("8\n9\n10\n") { puts spsort(add(1, 9), add(1, 8), add(1, 7)) }
     assert_output("1\n2\n4\n5\n10\n20\n") { puts divisors(mul(add(1, 9), 2)) }
+  end
 
+  def test_all_ao_print
     # assert_output: print:
     assert_output("9\n") {
       print div(mul(sub(add(add(add(1, 2), 3), 4), 1), 2), 2), "\n" }
     assert_output("8\n") { print add(square(2), square(2)), "\n" }
+  end
 
+  def test_all_ao_printf
     # assert_output: printf: add()
     assert_output("10\n") { printf "%d\n", add(add(add(1, 2), 3), 4) }
+  end
 
+  def test_all_ao_sprintf
     # assert_output: sprinf: add()
     assert_output("\"10\"\n") { p sprintf "%d", add(add(add(1, 2), 3), 4) }
     assert_output("\"10\"\n") { p sprintf("%d", add(add(add(1, 2), 3), 4)) }
