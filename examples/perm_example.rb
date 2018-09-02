@@ -12,7 +12,7 @@ puts perm(5, 5) # => 120
 
 puts perm(5.0, 5) # => 120
 
-puts perm(0, 0) # => 1 # (0! = 1)
+puts perm(0, 0) # => 1
 
 puts perm(0, 1) # => 0
 
