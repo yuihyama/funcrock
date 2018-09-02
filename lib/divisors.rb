@@ -7,8 +7,8 @@ def divisors(x)
 
   res = []
   (1..x).each do |n|
-  if x % n == 0
-    res << n
+    if x % n == 0
+      res << n
     end
   end
   res
