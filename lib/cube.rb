@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 def cube(x)
   x**3
   # or

@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require './lib/factorial'
 
 def perm(n, r)

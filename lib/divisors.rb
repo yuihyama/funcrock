@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 def divisors(x)
   if x < 0
     x = -x

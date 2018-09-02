@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 def fourop(x, y)
   x = x.to_f
   y = y.to_f

@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 def nextnum(x)
   if x.instance_of?(Integer)
     x + 1
