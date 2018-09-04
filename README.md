@@ -1,1 +1,7 @@
 # funcrock
+
+
+## License
+
+
+MIT License.
