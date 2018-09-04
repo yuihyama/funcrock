@@ -1,7 +1,4 @@
 def lt(x, y)
-  if x < y
-    true
-  else
-    false
-  end
+  return true if x < y
+  return false unless x < y
 end
