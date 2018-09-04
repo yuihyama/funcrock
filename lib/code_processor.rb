@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def code_processor
-  File.readlines('./xxx.txt').each do |line|
+  File.readlines('./sample-txt/sample.txt').each do |line|
     print "#{line.chomp} # => #{eval(line)}", "\n"
   end
 end
