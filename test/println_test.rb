@@ -3,7 +3,6 @@ require './lib/println'
 
 class PrintlnTest < Minitest::Test
   def test_println
-    skip 'Tests are OK, But noisy...'
     assert_nil println(1)
     assert_nil println(1, 2)
     assert_nil println(1, "\n", 2)
