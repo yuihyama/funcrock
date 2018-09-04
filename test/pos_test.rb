@@ -3,7 +3,6 @@ require './lib/pos'
 
 class PosTest < Minitest::Test
   def test_pos
-    assert pos(1)
     assert_equal 0, pos(0)
     assert_equal(-0, pos(0))
     assert_equal 1, pos(1)
