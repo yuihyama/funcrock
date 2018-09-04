@@ -55,6 +55,7 @@ class AllTest < Minitest::Test
     assert_equal [8, 9, 10], spsort(add(1, 9), add(1, 8), add(1, 7))
     assert_equal [1, 2, 4, 5, 10, 20], divisors(mul(add(1, 9), 2))
     assert_equal 4, divisor_count(pow(2, 3))
+    assert_equal [1, 2], swap(mul(1, 2), mul(1, 1))
   end
 
   def test_all_ao_p
@@ -93,6 +94,7 @@ class AllTest < Minitest::Test
     assert_output("[8, 9, 10]\n") { p spsort(add(1, 9), add(1, 8), add(1, 7)) }
     assert_output("[1, 2, 4, 5, 10, 20]\n") { p divisors(mul(add(1, 9), 2)) }
     assert_output("4\n") { p divisor_count(pow(2, 3)) }
+    assert_output("[1, 2]\n") { p swap(mul(1, 2), mul(1, 1)) }
   end
 
   def test_all_ao_puts
@@ -133,6 +135,7 @@ class AllTest < Minitest::Test
     assert_output("8\n9\n10\n") { puts spsort(add(1, 9), add(1, 8), add(1, 7)) }
     assert_output("1\n2\n4\n5\n10\n20\n") { puts divisors(mul(add(1, 9), 2)) }
     assert_output("4\n") { puts divisor_count(pow(2, 3)) }
+    assert_output("1\n2\n") { puts swap(mul(1, 2), mul(1, 1)) }
   end
 
   def test_all_ao_print
