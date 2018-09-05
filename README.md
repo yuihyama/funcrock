@@ -4,7 +4,10 @@
 funcrock: Mathematical "functions" for Ruby.
 
 
-This repository is under development. But:
+This repository is under development.
+
+
+But:
 
 
 (First of all, clone or download)
