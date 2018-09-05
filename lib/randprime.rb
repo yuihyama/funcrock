@@ -1,4 +1,3 @@
-require 'Prime'
 require './lib/primerange'
 
 def randprime(x)
