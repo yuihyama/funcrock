@@ -7,7 +7,7 @@ puts randprime(10) # => 2
 puts randprime(10) # => 3
 puts randprime(10) # => 5
 puts randprime(10) # => 7
-puts
+# Output: Random!!
 
 5.times { puts randprime(10) }
 # =>
