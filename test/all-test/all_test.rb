@@ -56,6 +56,10 @@ class AllTest < Minitest::Test
     assert_equal [1, 2, 4, 5, 10, 20], divisors(mul(add(1, 9), 2))
     assert_equal 4, divisor_count(pow(2, 3))
     assert_equal [1, 2], swap(mul(1, 2), mul(1, 1))
+    assert_equal true, iseven(div(4, 2))
+    assert_equal false, iseven(div(6, 2))
+    assert_equal true, isodd(div(6, 2))
+    assert_equal false, isodd(div(4, 2))
   end
 
   def test_all_ao_p
@@ -95,6 +99,10 @@ class AllTest < Minitest::Test
     assert_output("[1, 2, 4, 5, 10, 20]\n") { p divisors(mul(add(1, 9), 2)) }
     assert_output("4\n") { p divisor_count(pow(2, 3)) }
     assert_output("[1, 2]\n") { p swap(mul(1, 2), mul(1, 1)) }
+    assert_output("true\n") { p iseven(div(4, 2)) }
+    assert_output("false\n") { p iseven(div(6, 2)) }
+    assert_output("true\n") { p isodd(div(6, 2)) }
+    assert_output("false\n") { p isodd(div(4, 2)) }
   end
 
   def test_all_ao_puts
@@ -136,6 +144,10 @@ class AllTest < Minitest::Test
     assert_output("1\n2\n4\n5\n10\n20\n") { puts divisors(mul(add(1, 9), 2)) }
     assert_output("4\n") { puts divisor_count(pow(2, 3)) }
     assert_output("1\n2\n") { puts swap(mul(1, 2), mul(1, 1)) }
+    assert_output("true\n") { puts iseven(div(4, 2)) }
+    assert_output("false\n") { puts iseven(div(6, 2)) }
+    assert_output("true\n") { puts isodd(div(6, 2)) }
+    assert_output("false\n") { puts isodd(div(4, 2)) }
   end
 
   def test_all_ao_print
