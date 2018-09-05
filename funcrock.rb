@@ -40,4 +40,4 @@ puts factorial(10) # => 3628800
 # 3628800
 
 # More examples?
-# See examples directory :)
+# See examples directory or test directory :)
