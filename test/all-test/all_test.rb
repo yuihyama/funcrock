@@ -70,6 +70,7 @@ class AllTest < Minitest::Test
     assert_equal true, isprime(pos(3))
     assert_equal [2, 3, 5], primerange(neg(-5))
     assert_equal 11, nextprime(pos(3) + (-neg(4)))
+    assert_equal 6.283185307179586, TAU
   end
 
   def test_all_ao_p
