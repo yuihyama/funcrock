@@ -63,6 +63,7 @@ class AllTest < Minitest::Test
     assert_equal 2, mean([pos(1), pos(2), pos(3)])
     assert_equal -2, mean([neg(1), neg(2), neg(3)])
     assert_equal true, isprime(pos(3))
+    assert_equal [2, 3, 5], primerange(neg(-5))
   end
 
   def test_all_ao_p
@@ -108,6 +109,7 @@ class AllTest < Minitest::Test
     assert_output("false\n") { p isodd(div(4, 2)) }
     assert_output("2.0\n") { p mean([pos(1), pos(2), pos(3)]) }
     assert_output("true\n") { p isprime(pos(3)) }
+    assert_output("[2, 3, 5]\n") { p primerange(neg(-5)) }
   end
 
   def test_all_ao_puts
@@ -155,6 +157,7 @@ class AllTest < Minitest::Test
     assert_output("false\n") { puts isodd(div(4, 2)) }
     assert_output("2.0\n") { puts mean([pos(1), pos(2), pos(3)]) }
     assert_output("true\n") { puts isprime(pos(3)) }
+    assert_output("2\n3\n5\n") { puts primerange(neg(-5)) }
   end
 
   def test_all_ao_print
