@@ -3,8 +3,6 @@ require './lib/isprime'
 
 class IsPrime < Minitest::Test
   def test_isprime
-    assert isprime(3)
-
     assert_equal false, isprime(-1)
     assert_equal false, isprime(0)
     assert_equal false, isprime(1)
