@@ -62,6 +62,7 @@ class AllTest < Minitest::Test
     assert_equal false, isodd(div(4, 2))
     assert_equal 2, mean([pos(1), pos(2), pos(3)])
     assert_equal -2, mean([neg(1), neg(2), neg(3)])
+    assert_equal true, isprime(pos(3))
   end
 
   def test_all_ao_p
