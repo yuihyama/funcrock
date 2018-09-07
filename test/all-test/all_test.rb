@@ -60,6 +60,7 @@ class AllTest < Minitest::Test
     assert_equal false, iseven(div(6, 2))
     assert_equal true, isodd(div(6, 2))
     assert_equal false, isodd(div(4, 2))
+    assert_equal 2, mean([pos(1), pos(2), pos(3)])
   end
 
   def test_all_ao_p
