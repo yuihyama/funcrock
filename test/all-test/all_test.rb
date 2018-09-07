@@ -24,6 +24,11 @@ end
 # $ ruby all_test.rb
 
 class AllTest < Minitest::Test
+  def test_all_a
+    # assert:
+    assert randprime(100)
+  end
+
   def test_all_ae
     # assert_equal:
     assert_equal 10, add(add(add(1, 2), 3), 4)
