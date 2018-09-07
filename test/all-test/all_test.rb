@@ -154,6 +154,7 @@ class AllTest < Minitest::Test
     assert_output("true\n") { puts isodd(div(6, 2)) }
     assert_output("false\n") { puts isodd(div(4, 2)) }
     assert_output("2.0\n") { puts mean([pos(1), pos(2), pos(3)]) }
+    assert_output("true\n") { puts isprime(pos(3)) }
   end
 
   def test_all_ao_print
