@@ -118,6 +118,7 @@ class AllTest < Minitest::Test
     assert_output("true\n") { p isprime(pos(3)) }
     assert_output("[2, 3, 5]\n") { p primerange(neg(-5)) }
     assert_output("11\n") { p nextprime(pos(3) + (-neg(4))) }
+    assert_output("6.283185307179586\n") { p TAU }
   end
 
   def test_all_ao_puts
@@ -167,6 +168,7 @@ class AllTest < Minitest::Test
     assert_output("true\n") { puts isprime(pos(3)) }
     assert_output("2\n3\n5\n") { puts primerange(neg(-5)) }
     assert_output("11\n") { puts nextprime(pos(3) + (-neg(4))) }
+    assert_output("6.283185307179586\n") { puts TAU }
   end
 
   def test_all_ao_print
