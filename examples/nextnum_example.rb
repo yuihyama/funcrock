@@ -5,6 +5,7 @@ require './lib/nextnum'
 puts nextnum(1) # => 2
 
 puts nextnum(1.1) # => 1.2000000000000002
+puts nextnum(1.1).round(1) # => 1.2
 
 puts nextnum(1.2) # => 1.3
 
