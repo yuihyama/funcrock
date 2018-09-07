@@ -107,6 +107,7 @@ class AllTest < Minitest::Test
     assert_output("true\n") { p isodd(div(6, 2)) }
     assert_output("false\n") { p isodd(div(4, 2)) }
     assert_output("2.0\n") { p mean([pos(1), pos(2), pos(3)]) }
+    assert_output("true\n") { p isprime(pos(3)) }
   end
 
   def test_all_ao_puts
