@@ -7,6 +7,8 @@ require './lib/sub'
 require './lib/mul'
 require './lib/div'
 require './lib/factorial'
+require './lib/isprime'
+require './lib/primerange'
 
 # +(1, 2)
 # 1 + 2
@@ -38,6 +40,19 @@ puts factorial(10) # => 3628800
 # 40320
 # 362880
 # 3628800
+
+puts isprime(5) # => true
+
+puts isprime(6) # => false
+
+puts primerange(10)
+# =>
+# 2
+# 3
+# 5
+# 7
+
+print primerange(20), "\n" # => [2, 3, 5, 7, 11, 13, 17, 19]
 
 # More examples?
 # See examples directory or test directory :)
