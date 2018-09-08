@@ -1,13 +1,9 @@
 def divisors(x)
-  if x < 0
-    x = -x
-  end
+  x = -x if x < 0
 
   res = []
   (1..x).each do |n|
-    if x % n == 0
-      res << n
-    end
+    res << n if x % n == 0
   end
   res
 end
