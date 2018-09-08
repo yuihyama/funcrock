@@ -2,10 +2,10 @@
 
 require './lib/date'
 
+p date()
+puts date()
+print date()
+
 p date
 puts date
 print date
-
-p date()
-puts date()
-print()
