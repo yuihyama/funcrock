@@ -41,6 +41,8 @@ puts factorial(10) # => 3628800
 # 362880
 # 3628800
 
+# prime numbers:
+
 puts isprime(5) # => true
 
 puts isprime(6) # => false
