@@ -104,6 +104,7 @@ class AllTest < Minitest::Test
     assert_equal [0, 2, 4], even(*range(0, 4))
 
     assert_equal 6.283185307179586, TAU
+    assert_equal 0.5772156649015329, EULER_GAMMA
   end
 
   def test_all_ao_p
@@ -168,6 +169,7 @@ class AllTest < Minitest::Test
     assert_output("[0, 2, 4]\n") { p even(*range(0, 4)) }
 
     assert_output("6.283185307179586\n") { p TAU }
+    assert_output("0.5772156649015329\n") { p EULER_GAMMA }
   end
 
   def test_all_ao_puts
@@ -251,6 +253,7 @@ class AllTest < Minitest::Test
     assert_output("0\n2\n4\n") { puts even(*range(0, 4)) }
 
     assert_output("6.283185307179586\n") { puts TAU }
+    assert_output("0.5772156649015329\n") { puts EULER_GAMMA }
   end
 
   def test_all_ao_print
