@@ -42,6 +42,8 @@ class AllTest < Minitest::Test
     assert_equal 9, res1
     #
     assert_equal 1, add(mod(1, 2), mod(2, 2))
+    assert_equal 1, remainder(add(1, 6), add(1, 1))
+    assert_equal 1.0, remainder(add(1, 6), add(1, 0.5))
     assert_equal 8, add(square(2), square(2))
     assert_equal 19, sub(cube(3), cube(2))
     assert_equal 64, mul(pow(2, 3), pow(2, 3))
@@ -75,6 +77,7 @@ class AllTest < Minitest::Test
     assert_equal 6.283185307179586, TAU
     assert_equal 0.5772156649015329, EULER_GAMMA
     assert_equal 6.6, var([0, 3, 3, 5, 5, 5, 5, 7, 7, 10])
+    #
     v_s_ary = [0, 3, 3, 5, 5, 5, 5, 7, 7, 10]
     assert_equal 7.333333333333333, var(v_s_ary, degree_of_freedom = 1)
     assert_equal 7.333, var(v_s_ary, degree_of_freedom = 1).round(3)
@@ -83,6 +86,7 @@ class AllTest < Minitest::Test
     assert_equal 2.569, std(v_s_ary).round(3)
     assert_equal 2.70801280154532, std(v_s_ary, degree_of_freedom = 1)
     assert_equal 2.708, std(v_s_ary, 1).round(3)
+    #
   end
 
   def test_all_ao_p
@@ -98,6 +102,8 @@ class AllTest < Minitest::Test
     assert_output("9\n") { p res1 }
     #
     assert_output("1\n") { p add(mod(1, 2), mod(2, 2)) }
+    assert_output("1\n") { p remainder(add(1, 6), add(1, 1)) }
+    assert_output("1.0\n") { p remainder(add(1, 6), add(1, 0.5)) }
     assert_output("8\n") { p add(square(2), square(2)) }
     assert_output("19\n") { p sub(cube(3), cube(2)) }
     assert_output("2\n") { p constant(1) + constant(1) }
@@ -132,6 +138,9 @@ class AllTest < Minitest::Test
     assert_output("11\n") { p nextprime(pos(3) + (-neg(4))) }
     assert_output("6.283185307179586\n") { p TAU }
     assert_output("0.5772156649015329\n") { p EULER_GAMMA }
+    v_s_ary = [0, 3, 3, 5, 5, 5, 5, 7, 7, 10]
+    assert_output("6.6\n") { p var(v_s_ary) }
+    assert_output("2.569046515733026\n") { p std(v_s_ary) }
   end
 
   def test_all_ao_puts
@@ -145,6 +154,8 @@ class AllTest < Minitest::Test
     assert_output("9\n") { puts res1 }
     #
     assert_output("1\n") { puts add(mod(1, 2), mod(2, 2)) }
+    assert_output("1\n") { puts remainder(add(1, 6), add(1, 1)) }
+    assert_output("1.0\n") { puts remainder(add(1, 6), add(1, 0.5)) }
     assert_output("8\n") { puts add(square(2), square(2)) }
     assert_output("19\n") { puts sub(cube(3), cube(2)) }
     assert_output("2\n") { puts constant(1) + constant(1) }
@@ -183,6 +194,26 @@ class AllTest < Minitest::Test
     assert_output("11\n") { puts nextprime(pos(3) + (-neg(4))) }
     assert_output("6.283185307179586\n") { puts TAU }
     assert_output("0.5772156649015329\n") { puts EULER_GAMMA }
+    #
+    v_s_ary = [0, 3, 3, 5, 5, 5, 5, 7, 7, 10]
+    assert_output("6.6\n") { puts var(v_s_ary) }
+    assert_output("7.333333333333333\n") {
+      puts var(v_s_ary, degree_of_freedom = 1)
+    }
+    assert_output("7.333\n") {
+      puts var([0, 3, 3, 5, 5, 5, 5, 7, 7, 10], 1).round(3)
+    }
+    assert_output("2.569046515733026\n") { p std(v_s_ary) }
+    assert_output("2.569046515733026\n") {
+      puts std([0, 3, 3, 5, 5, 5, 5, 7, 7, 10])
+    }
+    assert_output("2.569\n") { puts std(v_s_ary).round(3) }
+    assert_output("2.70801280154532\n") {
+      puts std(v_s_ary, degree_of_freedom = 1)
+    }
+    assert_output("2.708\n") {
+      puts std(v_s_ary, degree_of_freedom = 1).round(3)
+    }
   end
 
   def test_all_ao_print
