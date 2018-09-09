@@ -97,6 +97,8 @@ class AllTest < Minitest::Test
     #
     assert_equal 4, max(pow(2, 1), mul(2, 2))
     assert_equal 4, max(*[pow(2, 1), mul(2, 2)])
+    assert_equal 6, sum(constant(1), constant(2), constant(3))
+    assert_equal 6, sum(*[constant(1), constant(2), constant(3)])
   end
 
   def test_all_ao_p
@@ -155,6 +157,8 @@ class AllTest < Minitest::Test
     assert_output("2.569046515733026\n") { p std(v_s_ary) }
     assert_output("4\n") { p max(pow(2, 1), mul(2, 2)) }
     assert_output("4\n") { p max(*[pow(2, 1), mul(2, 2)]) }
+    assert_output("6\n") { p sum(constant(1), constant(2), constant(3)) }
+    assert_output("6\n") { p sum(*[constant(1), constant(2), constant(3)]) }
   end
 
   def test_all_ao_puts
@@ -232,6 +236,8 @@ class AllTest < Minitest::Test
     }
     assert_output("4\n") { puts max(pow(2, 1), mul(2, 2)) }
     assert_output("4\n") { puts max(*[pow(2, 1), mul(2, 2)]) }
+    assert_output("6\n") { puts sum(constant(1), constant(2), constant(3)) }
+    assert_output("6\n") { puts sum(*[constant(1), constant(2), constant(3)]) }
   end
 
   def test_all_ao_print
