@@ -1,3 +1,3 @@
-def sum(ary)
-  ary.inject(:+)
+def sum(*args)
+  args.inject(:+)
 end
