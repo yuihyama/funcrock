@@ -31,6 +31,12 @@ class AllTest < Minitest::Test
     assert date
   end
 
+  def test_all_an
+    # assert_nil:
+    assert_nil time()
+    assert_nil time
+  end
+
   def test_all_ae
     # assert_equal:
     assert_equal 10, add(add(add(1, 2), 3), 4)
