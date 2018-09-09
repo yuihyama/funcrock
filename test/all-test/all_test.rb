@@ -153,6 +153,8 @@ class AllTest < Minitest::Test
     v_s_ary = [0, 3, 3, 5, 5, 5, 5, 7, 7, 10]
     assert_output("6.6\n") { p var(v_s_ary) }
     assert_output("2.569046515733026\n") { p std(v_s_ary) }
+    assert_output("4\n") { p max(pow(2, 1), mul(2, 2)) }
+    assert_output("4\n") { p max(*[pow(2, 1), mul(2, 2)]) }
   end
 
   def test_all_ao_puts
