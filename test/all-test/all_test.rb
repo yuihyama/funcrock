@@ -33,6 +33,7 @@ class AllTest < Minitest::Test
 
   def test_all_an
     # assert_nil:
+    assert_nil println(1)
     assert_nil time()
     assert_nil time
   end
