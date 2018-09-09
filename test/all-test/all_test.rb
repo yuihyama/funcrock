@@ -27,6 +27,8 @@ class AllTest < Minitest::Test
   def test_all_a
     # assert:
     assert randprime(100)
+    assert date()
+    assert date
   end
 
   def test_all_ae
@@ -72,6 +74,15 @@ class AllTest < Minitest::Test
     assert_equal 11, nextprime(pos(3) + (-neg(4)))
     assert_equal 6.283185307179586, TAU
     assert_equal 0.5772156649015329, EULER_GAMMA
+    assert_equal 6.6, var([0, 3, 3, 5, 5, 5, 5, 7, 7, 10])
+    v_s_ary = [0, 3, 3, 5, 5, 5, 5, 7, 7, 10]
+    assert_equal 7.333333333333333, var(v_s_ary, degree_of_freedom = 1)
+    assert_equal 7.333, var(v_s_ary, degree_of_freedom = 1).round(3)
+    assert_equal 2.569046515733026, std(v_s_ary)
+    assert_equal 2.569046515733026, std([0, 3, 3, 5, 5, 5, 5, 7, 7, 10])
+    assert_equal 2.569, std(v_s_ary).round(3)
+    assert_equal 2.70801280154532, std(v_s_ary, degree_of_freedom = 1)
+    assert_equal 2.708, std(v_s_ary, 1).round(3)
   end
 
   def test_all_ao_p
