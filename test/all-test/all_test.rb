@@ -95,6 +95,8 @@ class AllTest < Minitest::Test
     assert_equal 2.70801280154532, std(v_s_ary, degree_of_freedom = 1)
     assert_equal 2.708, std(v_s_ary, 1).round(3)
     #
+    assert_equal 4, max(pow(2, 1), mul(2, 2))
+    assert_equal 4, max(*[pow(2, 1), mul(2, 2)])
   end
 
   def test_all_ao_p
