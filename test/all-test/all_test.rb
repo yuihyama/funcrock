@@ -230,6 +230,8 @@ class AllTest < Minitest::Test
     assert_output("2.708\n") {
       puts std(v_s_ary, degree_of_freedom = 1).round(3)
     }
+    assert_output("4\n") { puts max(pow(2, 1), mul(2, 2)) }
+    assert_output("4\n") { puts max(*[pow(2, 1), mul(2, 2)]) }
   end
 
   def test_all_ao_print
