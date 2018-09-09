@@ -99,6 +99,7 @@ class AllTest < Minitest::Test
     assert_equal 4, max(*[pow(2, 1), mul(2, 2)])
     assert_equal 6, sum(constant(1), constant(2), constant(3))
     assert_equal 6, sum(*[constant(1), constant(2), constant(3)])
+    assert_equal [0, 2, 4], even(*range(0, 4))
   end
 
   def test_all_ao_p
@@ -159,6 +160,7 @@ class AllTest < Minitest::Test
     assert_output("4\n") { p max(*[pow(2, 1), mul(2, 2)]) }
     assert_output("6\n") { p sum(constant(1), constant(2), constant(3)) }
     assert_output("6\n") { p sum(*[constant(1), constant(2), constant(3)]) }
+    assert_output("[0, 2, 4]\n") { p even(*range(0, 4)) }
   end
 
   def test_all_ao_puts
@@ -238,6 +240,7 @@ class AllTest < Minitest::Test
     assert_output("4\n") { puts max(*[pow(2, 1), mul(2, 2)]) }
     assert_output("6\n") { puts sum(constant(1), constant(2), constant(3)) }
     assert_output("6\n") { puts sum(*[constant(1), constant(2), constant(3)]) }
+    assert_output("0\n2\n4\n") { puts even(*range(0, 4)) }
   end
 
   def test_all_ao_print
