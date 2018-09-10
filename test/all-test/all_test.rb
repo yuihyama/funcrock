@@ -24,6 +24,12 @@ end
 # $ ruby all_test.rb
 
 class AllTest < Minitest::Test
+  def test_all_s
+    # skip:
+    skip
+    assert_nil println(1)
+  end
+
   def test_all_a
     # assert:
     assert randprime(100)
@@ -33,7 +39,6 @@ class AllTest < Minitest::Test
 
   def test_all_an
     # assert_nil:
-    assert_nil println(1)
     assert_nil time()
     assert_nil time
   end
