@@ -5,4 +5,7 @@ def code_processor
     print "#{line.chomp} # => #{eval(line)}", "\n"
   end
 end
-code_processor
+
+if __FILE__ == $0
+  code_processor
+end
