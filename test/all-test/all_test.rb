@@ -28,6 +28,8 @@ class AllTest < Minitest::Test
     # skip:
     skip
     assert_nil println(1)
+    assert multiplication_table()
+    assert multiplication_table
   end
 
   def test_all_a
